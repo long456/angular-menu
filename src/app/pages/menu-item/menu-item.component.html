@@ -1,0 +1,8 @@
+<ul *ngFor="let item of menuData">
+  <li *ngIf="item.children.length > 0" nz-submenu nzTitle={{item.tittle}}>
+    <app-menu-item [menuData]="item.children"></app-menu-item>
+  </li>
+  <li *ngIf="item.children.length == 0" nz-menu-item nzMatchRouter>
+    {{item.tittle}}
+  </li>
+</ul>
